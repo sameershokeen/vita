@@ -40,9 +40,14 @@ app.use('/api/time', authenticate, timeRoutes);
 app.use('/api/expenses', authenticate, expenseRoutes);
 app.use('/api/journal', authenticate, journalRoutes);
 app.use('/api/progress', authenticate, progressRoutes);
-
-app.get('/api/health', (req, res) => res.json({ status: 'ok', timestamp: new Date() }));
-
+//mess=================================area
+app.get("/", (req, res) => {
+  res.json({
+    status: "ok",
+    message: "Vita API running"
+  });
+});
+//end ===================================here
 app.use(errorHandler);
 
 module.exports = app;
