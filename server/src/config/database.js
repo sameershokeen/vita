@@ -15,7 +15,12 @@
 // };
 
 // module.exports = connectDB;
-const mongoose = require('mongoose');
+cconst mongoose = require('mongoose');
+const dns = require('dns');
+
+// Force IPv4-first DNS resolution — fixes SRV lookup failures
+// seen in some serverless runtimes (Vercel/AWS Lambda) with mongodb+srv:// URIs
+dns.setDefaultResultOrder('ipv4first');
 
 const connectDB = async () => {
   try {
