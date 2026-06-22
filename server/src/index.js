@@ -7,6 +7,13 @@ const PORT = process.env.PORT || 5000;
 // 1. Immediately establish the database connection
 connectDB().catch(err => {
   console.error('❌ Failed to connect to MongoDB:', err);
+  console.error("=== MONGODB ERROR ===");
+  console.error("NAME:", err.name);
+  console.error("MESSAGE:", err.message);
+  console.error("CAUSE:", err.cause);
+  console.error("REASON:", err.reason);
+  console.error("=====================");
+
 });
 
 // 2. Keep app.listen ONLY for local development testing
