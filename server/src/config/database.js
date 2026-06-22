@@ -15,7 +15,7 @@
 // };
 
 // module.exports = connectDB;
-cconst mongoose = require('mongoose');
+const mongoose = require('mongoose');
 const dns = require('dns');
 
 // Force IPv4-first DNS resolution — fixes SRV lookup failures
