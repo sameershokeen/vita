@@ -17,6 +17,7 @@ const { errorHandler } = require('./middleware/errorHandler');
 const { authenticate } = require('./middleware/auth');
 
 const app = express();
+app.set('trust proxy', 1);
 
 // Security & parsing
 app.use(helmet());
