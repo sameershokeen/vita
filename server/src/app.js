@@ -11,6 +11,7 @@ const timeRoutes = require('./routes/time');
 const expenseRoutes = require('./routes/expenses');
 const journalRoutes = require('./routes/journal');
 const progressRoutes = require('./routes/progress');
+const healthRoute = require('./routes/health');
 
 const { errorHandler } = require('./middleware/errorHandler');
 const { authenticate } = require('./middleware/auth');
@@ -30,6 +31,7 @@ app.use('/api', limiter);
 
 // Public routes
 app.use('/api/auth', authRoutes);
+app.use('/api/health', healthRoute);
 
 // Protected routes
 app.use('/api/habits', authenticate, habitRoutes);
